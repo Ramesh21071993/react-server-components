@@ -1,7 +1,9 @@
 Steps to create this app:
 
 Step 1: npm init --y
+
 Step 2: npm i react react-dom
+
 Step 3: npm i -D webpack webpack-cli webpack-node-externals
 Step 4: npm i -D @babel/cli @babel/core @babel/preset-env @babel/preset-react babel-loader
 Step 5: Create the client File
