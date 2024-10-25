@@ -6,6 +6,13 @@ import { renderToString } from 'react-dom/server';
 import App from './client/App.jsx'; // transpiling with babel is required
 
 http.createServer((req, res) => {
+  
+  if (req.url.endsWith('/client.js')) {
+    res.writeHead(200, { 'Content-Type': 'text/javascript' });
+    res.end(fs.readFileSync('./dist/client.js'), 'utf8');
+    return;
+  }
+  
   res.writeHead(200, { 'Content-Type': 'text/html' });
 
   res.end(`
